@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use feature ':5.20';
+
+use Game::TTT::Schema;
+
+my $db = Game::TTT::Schema->connect;
+
+my @users = map { $_->name } $db->resultset('User')->all;
+
+say $_ foreach sort @users;

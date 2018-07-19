@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -v --user seth:pwd http://localhost:5000/games/1

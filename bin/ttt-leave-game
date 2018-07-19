@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+use Game::TTT::Client::LeaveGame;
+Game::TTT::Client::LeaveGame->run;
+
+1;
+
+__END__

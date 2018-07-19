@@ -1,0 +1,13 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Game::TTT::Schema;
+
+my $db = Game::TTT::Schema->connect;
+
+$db->resultset('User')
+   ->create( {
+       name => $ARGV[0]
+     });

@@ -1,0 +1,27 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Game::TTT::Schema;
+
+my $db = Game::TTT::Schema->connect;
+
+my $p1id = lookup_user($ARGV[0]);
+my $p2id = lookup_user($ARGV[1]);
+
+$db->resultset('Game')
+   ->create( {
+       p1 => $p1id,
+       p2 => $p2id,
+       p1tok => $ARGV[2],
+       p2tok => $ARGV[3],
+       defined $ARGV[4]
+       ? ( width => $ARGV[4] )
+       : ()
+     });
+
+sub lookup_user {
+  my( $name ) = @_;
+  return $db->resultset('User')->find( { name => $name } )->id;
+}

@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use feature ':5.20';
+
+use Game::TTT::Schema;
+
+my $db = Game::TTT::Schema->connect;
+
+my $games = $db->resultset('Game');
+
+while( my $game = $games->next ) {
+  printf "id: %d, width: %d, status: %s, players: %s [%s]; %s [%s]\n", 
+          $game->id, $game->width, $game->status,
+          lookup_user($game->p1), $game->p1tok, 
+          lookup_user($game->p2), $game->p2tok;
+}
+
+sub lookup_user {
+  my( $id ) = @_;
+
+  return $db->resultset( 'User' )->find( $id )->name;
+}
+

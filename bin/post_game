@@ -1,0 +1,11 @@
+#!/bin/bash
+
+curl --user seth:seth -d '{"username":"sethh","player1":"seth","player2":"harold","player1_token":"x","player2_token":"o"}' -X POST http://localhost:5000/games
+
+#curl --user seth:seth -d '{"player1":"seth","player2":"harold","player1_token":"o","player2_token":"o"}' -X POST http://localhost:5000/games
+
+#curl --user seth:seth -d '{"player1":"seth","player2":"harold","player1_token":"o","player2_token":"x","width":"50"}' -X POST http://localhost:5000/games
+
+#curl --uset seth:seth -d '{"player1":"seth","player2":"harold","player1_token":"o"}' -X POST http://localhost:5000/games
+
+#curl --user seth:seth -d '{"player1":"seth","player2":"seth","player1_token":"x","player2_token":"o"}' -X POST http://localhost:5000/games

@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+use Game::TTT::Client::ListUsers;
+Game::TTT::Client::ListUsers->run;
+
+1;
+
+__END__

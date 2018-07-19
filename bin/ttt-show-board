@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+use Game::TTT::Client::ShowBoard;
+Game::TTT::Client::ShowBoard->run;
+
+1;
+
+__END__
